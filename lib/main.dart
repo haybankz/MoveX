@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:move_x/screen/login_page.dart';
+import 'package:move_x/screen/register_page.dart';
 import 'package:move_x/widget/button.dart';
 import 'package:move_x/widget/details_card.dart';
 import 'package:move_x/widget/filter_button.dart';
