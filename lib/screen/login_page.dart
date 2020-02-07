@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:move_x/screen/login_page.dart';
+import 'package:move_x/screen/register_page.dart';
 import 'package:move_x/util/margin.dart';
 import 'package:move_x/widget/button.dart';
 import 'package:move_x/widget/password_input.dart';
 import 'package:move_x/widget/text_input.dart';
 
-class RegisterPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  State<RegisterPage> createState() => RegisterPageState();
+  State<LoginPage> createState() => LoginPageState();
 }
 
-class RegisterPageState extends State<RegisterPage> {
+class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+//      color: Colors.white,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [Colors.deepPurple, Colors.white],
@@ -23,14 +24,14 @@ class RegisterPageState extends State<RegisterPage> {
       ),
       child: SafeArea(
         child: Scaffold(
+
           appBar: AppBar(
             backgroundColor: Colors.deepPurple,
             elevation: 0,
             title: Text('Go back', style: GoogleFonts.raleway(color: Colors.white),),
             centerTitle: false,
-
-
           ),
+
           resizeToAvoidBottomInset: true,
           body: Container(
             width: screenWidth(context, percent: 1.0),
@@ -43,7 +44,7 @@ class RegisterPageState extends State<RegisterPage> {
               children: <Widget>[
 //                YMargin(60),
                 Container(
-                  height: (screenHeight(context)),
+                  height: (screenHeight(context, percent: 1) - 85),
                   width: screenWidth(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -66,32 +67,29 @@ class RegisterPageState extends State<RegisterPage> {
                           ),
                           YMargin(16),
                           Text(
-                            'Register'.toUpperCase(),
+                            'Login'.toUpperCase(),
                             style: GoogleFonts.raleway(
                                 color: Colors.deepPurple, fontSize: 20, fontWeight: FontWeight.w600),
                           ),
                           YMargin(10),
-                          MyTextInput(controller: null, hintText: 'Full Name'),
-                          YMargin(8),
+
                           MyTextInput(controller: null, hintText: 'Email'),
                           YMargin(8),
                           MyPasswordInput(controller: null, hintText: 'Password'),
-                          YMargin(8),
-                          MyTextInput(controller: null, hintText: 'Telephone'),
                           YMargin(16),
-                          MyButton(text: 'Register', callback: () {debugPrint('register');}),
+                          MyButton(text: 'Login', callback: () {debugPrint('login');}),
                           YMargin(8),
                           GestureDetector(
-                              onTap: (){
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LoginPage(),
-                                  ),
-                                );
-                                debugPrint('to login');
-                                },
-                              child: Text('Already have an account? Click to login.', style: GoogleFonts.merriweather(color: Colors.cyan, fontSize: 12),),),
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => RegisterPage(),
+                                ),
+                              );
+                              debugPrint('to register');
+                              },
+                            child: Text('Do not have an account? Click to register.', style: GoogleFonts.merriweather(color: Colors.cyan, fontSize: 12),),),
                           YMargin(16)
                         ],
                       ),

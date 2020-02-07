@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:move_x/screen/register_page.dart';
-import 'package:move_x/widget/button.dart';
-import 'package:move_x/widget/details_card.dart';
-import 'package:move_x/widget/filter_button.dart';
-import 'package:move_x/widget/otp.dart';
-import 'package:move_x/widget/password_input.dart';
-import 'package:move_x/widget/text_input.dart';
+import 'package:move_x/screen/login_page.dart';
+
 
 void main() => runApp(MyApp());
 
