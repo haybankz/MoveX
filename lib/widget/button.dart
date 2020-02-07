@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:move_x/util/margin.dart';
+
+class MyButton extends StatelessWidget {
+  final String text;
+  final VoidCallback callback;
+
+  MyButton({@required this.text, @required this.callback});
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: screenWidth(context, percent: 0.8),
+      child: RaisedButton(
+        elevation: 8,
+        onPressed: callback,
+        color: Colors.deepPurple,
+        splashColor: Colors.deepPurpleAccent,
+        child: Text(
+          text.toUpperCase(),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        padding: EdgeInsets.only(left: 0, right: 0, top: 12, bottom: 12),
+      ),
+    );
+  }
+}
