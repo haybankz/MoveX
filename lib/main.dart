@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:move_x/screen/login_page.dart';
 import 'package:move_x/widget/button.dart';
 import 'package:move_x/widget/details_card.dart';
 import 'package:move_x/widget/filter_button.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,8 +30,9 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.deepPurple,
 //        textTheme: TextTheme(),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-//    home: Otp(email: "", newEmail: "", isGuestCheckOut: false,),
+//        resizeToAvoidBottomInset: false,
+//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    home: LoginPage()
     );
   }
 }
@@ -113,9 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
 //            Center(child: MyPasswordInput(controller: null, hintText: 'Password',),),
 //            Otp(),
 //            MyButton(text: 'Login', callback: (){}),
-            DetailsCard(title: 'Wallet', subTitle: 'Balance', number: 'N1000', colors: [Colors.lightBlue, Colors.lightBlue, Colors.blueAccent,
-              Colors.blueAccent, Colors.cyan, Colors.cyan,],),
-            FilterButton(onPressed: (){})
+//            DetailsCard(title: 'Wallet', subTitle: 'Balance', number: 'N1000', colors: [Colors.lightBlue, Colors.lightBlue, Colors.blueAccent,
+//              Colors.blueAccent, Colors.cyan, Colors.cyan,],),
+//            FilterButton(onPressed: (){})
+//          LoginPage(),
           ],
         ),
       ),
