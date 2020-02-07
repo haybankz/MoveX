@@ -8,7 +8,7 @@ import 'package:move_x/widget/text_input.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => LoginPageState();
+  LoginPageState createState() => LoginPageState();
 }
 
 class LoginPageState extends State<LoginPage> {
@@ -69,7 +69,8 @@ class LoginPageState extends State<LoginPage> {
                           Text(
                             'Login'.toUpperCase(),
                             style: GoogleFonts.raleway(
-                                color: Colors.deepPurple, fontSize: 20, fontWeight: FontWeight.w600),
+                                color: Colors.deepPurple, fontSize: 20, fontWeight: FontWeight.w600,
+                              letterSpacing: 5,),
                           ),
                           YMargin(10),
 

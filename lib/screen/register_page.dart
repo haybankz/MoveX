@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:move_x/screen/login_page.dart';
+import 'package:move_x/screen/verification_page.dart';
 import 'package:move_x/util/margin.dart';
 import 'package:move_x/widget/button.dart';
 import 'package:move_x/widget/password_input.dart';
@@ -8,7 +9,7 @@ import 'package:move_x/widget/text_input.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
-  State<RegisterPage> createState() => RegisterPageState();
+  RegisterPageState createState() => RegisterPageState();
 }
 
 class RegisterPageState extends State<RegisterPage> {
@@ -26,10 +27,11 @@ class RegisterPageState extends State<RegisterPage> {
           appBar: AppBar(
             backgroundColor: Colors.deepPurple,
             elevation: 0,
-            title: Text('Go back', style: GoogleFonts.raleway(color: Colors.white),),
+            title: Text(
+              'Go back',
+              style: GoogleFonts.raleway(color: Colors.white),
+            ),
             centerTitle: false,
-
-
           ),
           resizeToAvoidBottomInset: true,
           body: Container(
@@ -68,30 +70,50 @@ class RegisterPageState extends State<RegisterPage> {
                           Text(
                             'Register'.toUpperCase(),
                             style: GoogleFonts.raleway(
-                                color: Colors.deepPurple, fontSize: 20, fontWeight: FontWeight.w600),
+                              color: Colors.deepPurple,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 5,
+                            ),
                           ),
                           YMargin(10),
                           MyTextInput(controller: null, hintText: 'Full Name'),
                           YMargin(8),
                           MyTextInput(controller: null, hintText: 'Email'),
                           YMargin(8),
-                          MyPasswordInput(controller: null, hintText: 'Password'),
+                          MyPasswordInput(
+                              controller: null, hintText: 'Password'),
                           YMargin(8),
                           MyTextInput(controller: null, hintText: 'Telephone'),
                           YMargin(16),
-                          MyButton(text: 'Register', callback: () {debugPrint('register');}),
-                          YMargin(8),
-                          GestureDetector(
-                              onTap: (){
+                          MyButton(
+                              text: 'Register',
+                              callback: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LoginPage(),
+                                    builder: (context) => VerificationPage(),
                                   ),
                                 );
-                                debugPrint('to login');
-                                },
-                              child: Text('Already have an account? Click to login.', style: GoogleFonts.merriweather(color: Colors.cyan, fontSize: 12),),),
+                                debugPrint('register');
+                              }),
+                          YMargin(8),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginPage(),
+                                ),
+                              );
+                              debugPrint('to login');
+                            },
+                            child: Text(
+                              'Already have an account? Click to login.',
+                              style: GoogleFonts.merriweather(
+                                  color: Colors.cyan, fontSize: 12),
+                            ),
+                          ),
                           YMargin(16)
                         ],
                       ),
