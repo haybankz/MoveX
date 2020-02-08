@@ -44,7 +44,7 @@ class LoginPageState extends State<LoginPage> {
               children: <Widget>[
 //                YMargin(60),
                 Container(
-                  height: (screenHeight(context, percent: 1) - 85),
+                  height: (screenHeight(context, percent: 1) - 80),
                   width: screenWidth(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -74,11 +74,11 @@ class LoginPageState extends State<LoginPage> {
                           ),
                           YMargin(10),
 
-                          MyTextInput(controller: null, hintText: 'Email'),
+                          MyTextInput(controller: null, hintText: 'Email', width: screenWidth(context, percent: 0.8),),
                           YMargin(8),
                           MyPasswordInput(controller: null, hintText: 'Password'),
                           YMargin(16),
-                          MyButton(text: 'Login', callback: () {debugPrint('login');}),
+                          MyButton(text: 'Login', callback: () {debugPrint('login');}, width: screenWidth(context, percent: 0.8),),
                           YMargin(8),
                           GestureDetector(
                             onTap: (){

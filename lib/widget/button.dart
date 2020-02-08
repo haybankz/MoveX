@@ -4,12 +4,13 @@ import 'package:move_x/util/margin.dart';
 class MyButton extends StatelessWidget {
   final String text;
   final VoidCallback callback;
+  double width = 0;
 
-  MyButton({@required this.text, @required this.callback});
+  MyButton({@required this.text, @required this.callback, this.width});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: screenWidth(context, percent: 0.8),
+      width: this.width == 0 ? screenWidth(context, percent: 0.8) : width,
       child: RaisedButton(
         elevation: 8,
         onPressed: callback,

@@ -6,8 +6,9 @@ class MyTextInput extends StatelessWidget{
 
   final TextEditingController controller;
   final String hintText;
+  double width = 0;
 
-  MyTextInput({@required this.controller, @required this.hintText});
+  MyTextInput({@required this.controller, @required this.hintText, this.width});
 
 
   @override
@@ -15,7 +16,7 @@ class MyTextInput extends StatelessWidget{
     return Theme(
       data: ThemeData.light(),
       child: Container(
-        width: screenWidth(context, percent: 0.8),
+        width: this.width == 0 ? screenWidth(context, percent: 0.8) : this.width,
         child: TextFormField(
 
           cursorColor: Colors.deepPurple,

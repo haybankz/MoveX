@@ -45,7 +45,7 @@ class RegisterPageState extends State<RegisterPage> {
               children: <Widget>[
 //                YMargin(60),
                 Container(
-                  height: (screenHeight(context)),
+                  height: (screenHeight(context) - 80),
                   width: screenWidth(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -61,7 +61,7 @@ class RegisterPageState extends State<RegisterPage> {
                         mainAxisSize: MainAxisSize.max,
 //                    crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          YMargin(20),
+//                          YMargin(20),
                           Icon(
                             Icons.ac_unit,
                             size: screenHeight(context, percent: 0.26),
@@ -77,14 +77,14 @@ class RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                           YMargin(10),
-                          MyTextInput(controller: null, hintText: 'Full Name'),
+                          MyTextInput(controller: null, hintText: 'Full Name', width: screenWidth(context, percent: 0.8),),
                           YMargin(8),
-                          MyTextInput(controller: null, hintText: 'Email'),
+                          MyTextInput(controller: null, hintText: 'Email', width: screenWidth(context, percent: 0.8)),
                           YMargin(8),
                           MyPasswordInput(
                               controller: null, hintText: 'Password'),
                           YMargin(8),
-                          MyTextInput(controller: null, hintText: 'Telephone'),
+                          MyTextInput(controller: null, hintText: 'Telephone', width: screenWidth(context, percent: 0.8)),
                           YMargin(16),
                           MyButton(
                               text: 'Register',
@@ -96,7 +96,8 @@ class RegisterPageState extends State<RegisterPage> {
                                   ),
                                 );
                                 debugPrint('register');
-                              }),
+                              },
+                              width: screenWidth(context, percent: 0.8),),
                           YMargin(8),
                           GestureDetector(
                             onTap: () {
